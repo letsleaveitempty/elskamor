@@ -1,0 +1,263 @@
+/ %p#notice= notice
+/ %p
+/   %strong Title:
+/   = @post.title
+/ %p
+/   %strong Body:
+/   = @post.body
+/ = link_to 'Edit', edit_post_path(@post)
+/ |
+/ \#{link_to 'Back', posts_path}
+
+%section#content
+  .container
+    .row
+      / begin:article
+      .col-md-8.col-sm-8
+        .row
+          .col-md-12.post-single
+            .heading-title
+              %h2
+                %a= @post.title
+            .post-meta
+              %span
+                %em
+                  By
+                  %a{href: "#"} anita
+              %span
+                %em On May 04, 2014
+              %span
+                %em
+                  In
+                  %a{href: "#"} Love life
+            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            %blockquote
+              %p Jangan menyentuh hidup orang lain jika kau hanya berniat untuk menghancurkannya~
+              %small anonimous
+            / %img{alt: "danish magazine template", src: "assets/img05.jpg"}/
+            = image_tag("img05.jpg")
+            / .row
+            /   .col-md-4.col-sm-4.col-xs-4
+            /     %img{alt: "danish magazine template", src: "img/img01.jpg"}/
+            /   .col-md-4.col-sm-4.col-xs-4
+            /     %img{alt: "danish magazine template", src: "img/img03.jpg"}/
+            /   .col-md-4.col-sm-4.col-xs-4
+            /     %img{alt: "danish magazine template", src: "img/img04.jpg"}/
+            %p= @post.body
+        %hr/
+        / begin:comments
+        .row
+          .col-md-12
+            .comment
+              %h3 Discussion
+              %ul.comments.list-unstyled
+                %li.clearfix
+                  %img.avatar{alt: "danish personal blog and magazine template", src: "assets/avatar.png"}/
+                  .post-comments
+                    %p.meta
+                      Dec 18, 2014
+                      %a{href: "#"} JohnDoe
+                      says :
+                      %i.pull-right
+                        %a{href: "#"}
+                          %small Reply
+                    %p
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam a sapien odio, sit amet
+                %li.clearfix
+                  %img.avatar{alt: "danish personal blog and magazine template", src: "assets/avatar.png"}/
+                  .post-comments
+                    %p.meta
+                      Dec 19, 2014
+                      %a{href: "#"} JohnDoe
+                      says :
+                      %i.pull-right
+                        %a{href: "#"}
+                          %small Reply
+                    %p
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam a sapien odio, sit amet
+                  %ul.comments.hidden-xs.list-unstyled
+                    %li.clearfix
+                      %img.avatar{alt: "danish personal blog and magazine template", src: "assets/avatar.png"}/
+                      .post-comments
+                        %p.meta
+                          Dec 20, 2014
+                          %a{href: "#"} JohnDoe
+                          says :
+                          %i.pull-right
+                            %a{href: "#"}
+                              %small Reply
+                        %p
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                          Etiam a sapien odio, sit amet
+                      %ul.comments.list-unstyled
+                        %li.clearfix
+                          %img.avatar{alt: "danish personal blog and magazine template", src: "assets/avatar.png"}/
+                          .post-comments
+                            %p.meta
+                              Dec 20, 2014
+                              %a{href: "#"} JohnDoe
+                              says :
+                              %i.pull-right
+                                %a{href: "#"}
+                                  %small Reply
+                            %p
+                              Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                              Etiam a sapien odio, sit amet
+                %li.clearfix
+                  %img.avatar{alt: "danish personal blog and magazine template", src: "assets/avatar.png"}/
+                  .post-comments
+                    %p.meta
+                      Dec 28, 2014
+                      %a{href: "#"} JohnDoe
+                      says :
+                      %i.pull-right
+                        %a{href: "#"}
+                          %small Reply
+                    %p
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                      Etiam a sapien odio, sit amet
+        / end:comments
+        %hr/
+        / begin:post-comment
+        .row
+          .col-md-12
+            %h3 Post Comment
+            %form.comment-form
+              .row
+                .col-md-6.col-sm-6
+                  %input.form-control{placeholder: "Enter Your Name : ", type: "text"}/
+                  %input.form-control{placeholder: "Enter Your Email : ", type: "email"}/
+                  %input.form-control{placeholder: "Enter Your URL : ", type: "text"}/
+                .col-md-6.col-sm-6
+                  %textarea.form-control{placeholder: "Type Your Comment : ", rows: "4"}
+                  %input.btn.btn-info.btn-lg.btn-block{type: "submit"}/
+        / end:post-comment
+      / end:article
+      / begin:sidebar
+      .col-md-4.col-sm-4.sidebar
+        .widget-sidebar
+          %h3 Search
+          %form#search.navbar-form.search{role: "search"}
+            %input.form-control.input-lg{placeholder: "Type your keyword", type: "search"}/
+            %button.btn.btn-info.btn-search{type: "submit"}
+              %i.fa.fa-arrow-right
+        .widget-sidebar.widget_top-posts
+          %h3 Popular Post
+          %ul
+            %li
+              .post-wrapper
+                .post-img{style: "background: url(assets/img03.jpg);"}
+                .post-text
+                  .post-meta
+                    %span
+                      %em in
+                      %a{href: "#", rel: "category tag", title: "View all posts in berita utama"} berita utama
+                    %span
+                      %em April 22, 2014
+                  .heading-title
+                    %h2
+                      %a{href: "#"} Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            %li
+              .post-wrapper
+                .post-img{style: "background: url(assets/img04.jpg);"}
+                .post-text
+                  .post-meta
+                    %span
+                      %em in
+                      %a{href: "#", rel: "category tag", title: "View all posts in berita utama"} berita utama
+                    %span
+                      %em April 22, 2014
+                  .heading-title
+                    %h2
+                      %a{href: "#"} Food truck fixie locavore, accusamus mcsweeney's marfa nulla single-origin
+            %li
+              .post-wrapper
+                .post-img{style: "background: url(assets/img05.jpg);"}
+                .post-text
+                  .post-meta
+                    %span
+                      %em in
+                      %a{href: "#", rel: "category tag", title: "View all posts in berita utama"} berita utama
+                    %span
+                      %em April 22, 2014
+                  .heading-title
+                    %h2
+                      %a{href: "#"} Lorem ipsum dolor sit amet, consectetur
+        .widget-sidebar.default_widget
+          %h3 Link
+          %ul
+            %li
+              %a{href: "#"} Lorem ipsum dolor sit
+            %li
+              %a{href: "#"} Lorem ipsum sit
+            %li
+              %a{href: "#"} Lorem ipsum
+            %li
+              %a{href: "#"} Lorem ipsum dolor
+            %li
+              %a{href: "#"} Lorem ipsum dolor sit
+        .widget-sidebar.widget_categories
+          %h3 Categories
+          %ul
+            %li
+              %a{href: "#"} Design
+              (20)
+            %li
+              %a{href: "#"} Acessories
+              (32)
+            %li
+              %a{href: "#"} Love life
+              (12)
+            %li
+              %a{href: "#"} My Work
+              (21)
+            %li
+              %a{href: "#"} My Trip
+              (8)
+        .widget-sidebar.widget_archive
+          %h3 Archives
+          %ul
+            %li
+              %a{href: "#"} May 2014
+              (20)
+            %li
+              %a{href: "#"} April 2014
+              (32)
+            %li
+              %a{href: "#"} March 2014
+              (12)
+            %li
+              %a{href: "#"} February 2014
+              (21)
+            %li
+              %a{href: "#"} January 2014
+              (8)
+        .widget-sidebar.default_widget
+          %h3 Text Widget
+          %p
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            consequat. Duis aute irure dolor in.
+      / end:sidebar
+/ end:content
+/ begin:partner
+/ %section#partner
+/   .container
+/     .row
+/       .col-md-12
+/         %ul.list-unstyled.brand-img
+/           %li
+/             %a{href: "#"}
+/               %img{src: "assets/partner01.png"}/
+/           %li
+/             %a{href: "#"}
+/               %img{src: "assets/partner02.png"}/
+/           %li
+/             %a{href: "#"}
+/               %img{src: "assets/partner01.png"}/
+/           %li
+/             %a{href: "#"}
+/               %img{src: "assets/partner02.png"}/
