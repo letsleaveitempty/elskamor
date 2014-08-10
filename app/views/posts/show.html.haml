@@ -30,10 +30,10 @@
                 %em
                   In
                   %a{href: "#"} Love life
-            %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-            %blockquote
-              %p Jangan menyentuh hidup orang lain jika kau hanya berniat untuk menghancurkannya~
-              %small anonimous
+            / %p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            / %blockquote
+            /   %p Jangan menyentuh hidup orang lain jika kau hanya berniat untuk menghancurkannya~
+            /   %small anonimous
             / %img{alt: "danish magazine template", src: "assets/img05.jpg"}/
             = image_tag("img05.jpg")
             / .row
@@ -43,7 +43,7 @@
             /     %img{alt: "danish magazine template", src: "img/img03.jpg"}/
             /   .col-md-4.col-sm-4.col-xs-4
             /     %img{alt: "danish magazine template", src: "img/img04.jpg"}/
-            %p= @post.body
+            %p= raw(@post.body)
         %hr/
         / begin:comments
         .row

@@ -40,33 +40,33 @@
         / Collect the nav links, forms, and other content for toggling
         #navbar-top.collapse.navbar-collapse
           %ul.nav.navbar-nav.navbar-right
+            / %li
+            /   %a{href: "#"} Home
             %li
-              %a{href: "#"} Home
-            %li
-              %a{href: "#"} About
-            %li
-              %a{href: "#"} Contact
-            %li
-              %a{href: "#"} Page
-            %li.dropdown
-              %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
-                Pages
-                %b.caret
-              %ul.dropdown-menu
-                %li
-                  %a{href: "#"} Blog
-                %li.active
-                  %a{href: "#"} Single
-                %li
-                  %a{href: "#"} Archives
-                %li
-                  %a{href: "#"} Category
-                %li
-                  %a{href: "#"} Portfolio
-                %li
-                  %a{href: "#"} Portfolio Single
+              %a{href: "/posts"} Blog
+            / %li
+            /   %a{href: "#"} Contact
+            / %li
+            /   %a{href: "#"} Page
+            / %li.dropdown
+            /   %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}
+            /     Pages
+            /     %b.caret
+            /   %ul.dropdown-menu
+            /     %li
+            /       %a{href: "#"} Blog
+            /     %li.active
+            /       %a{href: "#"} Single
+            /     %li
+            /       %a{href: "#"} Archives
+            /     %li
+            /       %a{href: "#"} Category
+            /     %li
+            /       %a{href: "#"} Portfolio
+            /     %li
+            /       %a{href: "#"} Portfolio Single
 
-    %section#header.heading{style: "background: url(assets/img05.jpg);"}
+    %section#header.heading{style: "background: image-url('img05.jpg');"}
       .container
         .row
           .col-md-8.col-md-offset-2
@@ -83,7 +83,7 @@
     .row
       .col-md-3.col-sm-3
         .widget
-          %h3 Recent Post
+          %h3 Recent Posts
           %ul.list-unstyled
             %li
               %a{href: "#"} Lorem ipsum
@@ -97,7 +97,7 @@
               %a{href: "#"} Lorem dolor sit
       .col-md-3.col-sm-3
         .widget
-          %h3 Useful Links
+          %h3 Top destinations
           %ul.list-unstyled
             %li
               %a{href: "#"} Lorem sit
