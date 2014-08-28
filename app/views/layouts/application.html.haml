@@ -48,10 +48,11 @@
               %a{href: offers_path} Offers
             - if user_signed_in?
               %li
-                %a{href: destroy_user_session_path, method: :delete} Logout
+                / %a{href: destroy_user_session_path, method: :delete} Logout
+                = link_to 'Sign out', destroy_user_session_path
             -else
               %li
-                %a{href: new_user_session_path} Login
+                %a{href: new_user_session_path} Sign in
 
             / %li.dropdown
             /   %a.dropdown-toggle{"data-toggle" => "dropdown", href: "#"}

@@ -36,5 +36,5 @@
                       %h2
                         %a{href: post_path(latest)}= latest.title
                   .body
-                    %p= latest.body[0..100]
+                    %p= raw(latest.body[0..100])
 
