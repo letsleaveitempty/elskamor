@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: elskamor-com
+  api_key: '822877791959625'
+  api_secret: wBrz9XF0mFghbgEoWxITQyjWidY
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: elskamor-com
+  api_key: '822877791959625'
+  api_secret: wBrz9XF0mFghbgEoWxITQyjWidY
+  enhance_image_tag: true
+  static_image_support: true
+# test:
+#   cloud_name: elskamor-com
+#   api_key: '822877791959625'
+#   api_secret: wBrz9XF0mFghbgEoWxITQyjWidY
+#   enhance_image_tag: true
+#   static_image_support: false

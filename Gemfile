@@ -22,6 +22,8 @@ gem 'haml'
 gem "font-awesome-rails"
 gem 'bootsy'
 gem 'devise'
+gem 'cloudinary'
+
 # gem 'bootstrap-sass'
 # gem 'autoprefixer-rails'
 

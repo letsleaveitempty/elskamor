@@ -1,7 +1,7 @@
 %section#content
   .container
     .row
-      / begin:article
+
       .col-md-8.col-sm-8
         .row
           .col-md-12.post-single
@@ -15,10 +15,10 @@
                   %a Maria
               %span
                 %em On May 04, 2014
-            = image_tag("img05.jpg")
+            = cl_image_tag(@post.main_image, :crop => :fill, :width => 120, :height => 80)
             %p= raw(@post.body)
         %hr/
-      / begin:sidebar
+
       .col-md-4.col-sm-4.sidebar
         .widget-sidebar.widget_top-posts
           %h3 Latest Posts
@@ -36,5 +36,5 @@
                       %h2
                         %a{href: post_path(latest)}= latest.title
                   .body
-                    %p= raw(latest.body[0..100])
+                    %p= strip_tags(latest.body[0..150])
 

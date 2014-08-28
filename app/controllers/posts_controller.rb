@@ -26,6 +26,13 @@ class PostsController < ApplicationController
   # POST /posts.json
   def create
     @post = Post.new(post_params)
+    @post.author = current_user
+
+    if params[:main_image].present?
+      preloaded = Cloudinary::PreloadedFile.new(params[:main_image])         
+      raise "Invalid upload signature" if !preloaded.valid?
+      @post.main_image = preloaded.identifier
+    end
 
     respond_to do |format|
       if @post.save
