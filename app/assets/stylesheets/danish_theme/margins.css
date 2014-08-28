@@ -1,0 +1,82 @@
+// Margin
+
+$extraSmall: 5px
+$small: 10px
+$normal: 20px
+$large: 30px
+$extraLarge: 40px
+
+.no-margin
+  margin: 0 !important
+
+.no-margin-top
+  margin-top: 0 !important
+
+.no-margin-bottom
+  margin-bottom: 0 !important
+
+.no-margin-left
+  margin-left: 0 !important
+
+.no-margin-right
+  margin-right: 0 !important
+
+.margin-left
+  margin-left: $normal !important
+
+.margin-right
+  margin-right: $normal !important
+
+.margin-bottom
+  margin-bottom: $normal !important
+
+.margin-top
+  margin-top: $normal !important
+
+.margin-bottom-large
+  margin-bottom: $large !important
+
+.margin-top-large
+  margin-top: $large !important
+
+.margin-left-large
+  margin-left: $large !important
+
+.margin-right-large
+  margin-right: $large !important
+
+.margin-top-xlarge
+  margin-top: $extraLarge !important
+
+.margin-right-xlarge
+  margin-right: $extraLarge !important
+
+.margin-left-xlarge
+  margin-left: $extraLarge !important
+
+.margin-bottom-xlarge
+  margin-bottom: $extraLarge !important
+
+.margin-bottom-small
+  margin-bottom: $small !important
+
+.margin-top-small
+  margin-top: $small !important
+
+.margin-right-small
+  margin-right: $small !important
+
+.margin-left-small
+  margin-left: $small !important
+
+.margin-bottom-xsmall
+  margin-bottom: $extraSmall !important
+
+.margin-top-xsmall
+  margin-top: $extraSmall !important
+
+.margin-right-xsmall
+  margin-right: $extraSmall !important
+
+.margin-left-xsmall
+  margin-left: $extraSmall !important

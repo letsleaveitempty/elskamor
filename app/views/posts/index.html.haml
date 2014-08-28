@@ -1,41 +1,42 @@
-.text-center
-  = link_to 'New Post', new_post_path, class: 'btn btn-primary'
+%section#content
+  .container
+    .row
+    - if user_signed_in?
+      %span.col-lg-12
+        = link_to 'New Post', new_post_path, class: 'btn btn-lg btn-warning'
+      %br
+      %br
+      %br
 
-- @posts.each do |post|
-  .col-md-4.col-sm-6
-    .post-container
-      .post-content
-        .post-meta
-          %span
-            By
-            %a{href: "#", rel: "author", title: "Posts by admin"} Anita
-          %span On September 11, 2014
-          %span
-            In
-            %a{href: "#"} Stories
-        %p
-          = post.title
-        .post-link
-          %a
-            %span= link_to 'Read More', post
-            %span= link_to 'Edit', edit_post_path(post)
-            %span= link_to 'Destroy', post, method: :delete, data: { confirm: 'Are you sure?' }
-      .post-atribut
-        .row
-          .col-md-4.col-sm-4.col-xs-4
-            %a{href: "#"}
+    .row
+    - @posts.each do |post|
+      .col-md-6.col-xs-12
+        .post-container
+          .post-content
+            = image_tag("img05.jpg")
+            .heading-title.heading-small
+              %h2
+                = link_to post.title, post_path(post)
+            .post-meta
               %span
-                %i.fa.fa-heart
-                2000
-          .col-md-4.col-sm-4.col-xs-4
-            %a{href: "#"}
-              %span
-                %i.fa.fa-comments
-                400
-          .col-md-4.col-sm-4.col-xs-4
-            %a{href: "#"}
-              %span
-                %i.fa.fa-eye
-                2500
+                By Maria
+                / %a{:href => "#", :rel => "author", :title => "Posts by admin"} 
+              %span= post.created_at.strftime("on %A, %B %e, %Y")
+              / %span
+              /   In
+              /   %a{:href => "#"} Story
+            %p
+              = raw(post.body[0..250])
+              = "..."
+            .post-link
+              %a{:href => post_path(post)}
+                %span Read More
+                - if user_signed_in?
+                  %br
+                  %br
+                  %hr
+                  %br
+                  .well.well-small
+                    = link_to 'Edit', edit_post_path(post)
+                    = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }
 
-.clearfix
