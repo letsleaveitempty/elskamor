@@ -1,0 +1,31 @@
+%section#content
+  .container
+    .row
+      - if user_signed_in?
+        .text-center
+          = link_to ' Add New Offer', new_offer_path, class: 'btn btn-lg btn-primary'
+        %br
+        %br
+        %br
+
+    .row
+      - @offers.each do |offer|
+        .post-container.col-md-6.col-xs-12
+          .post-content.no-padding
+            = image_tag("img05.jpg")
+          .post-content
+            .heading-title.heading-small
+              %h2= link_to offer.name, offer_path(offer)
+            %p= strip_tags(offer.description[0..250])
+            .post-link
+              %a{:href => offer_path(offer)}
+                %span See More Details
+                - if user_signed_in?
+                  %br
+                  %br
+                  %hr
+                  %br
+                  .well.well-small.text-center
+                    = link_to 'Edit', edit_offer_path(offer)
+                    %br
+                    = link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure you want to delete this offer?' }

@@ -2,8 +2,8 @@
   .container
     .row
       - if user_signed_in?
-        %span.col-lg-12
-          = link_to 'New Post', new_post_path, class: 'btn btn-lg btn-warning'
+        .text-center
+          = link_to 'Add New Post Here', new_post_path, class: 'btn btn-lg btn-primary'
         %br
         %br
         %br
