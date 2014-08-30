@@ -41,9 +41,8 @@
     #navbar-top.collapse.navbar-collapse
       .container
         %a.navbar-brand{href: root_path}
+          ELSKAMOR
           %i.fa.fa-heart
-            = succeed "amor" do
-              %span Elsk
         %ul.nav.navbar-nav.navbar-right
           %li
             %a{href: root_path} Home
@@ -77,61 +76,42 @@
             /     %li
             /       %a{href: "#"} Portfolio Single
 
-    %section#header.heading{style: "background: url(img05.jpg);"}
+    %section#header{style: "background-image: url('http://cdn.morguefile.com/imageData/public/files/g/greyerbaby/09/l/1379806627d35ez.jpg');"}
       .container
         .row
-          .col-md-8.col-md-offset-2
-            .title-desc
-              %p Welcome to
-              %h2 Elskamor
-      .overlay
+          %h1.text-center{style: "color: white !important"}
+            ELSKAMOR
+            %i.fa.fa-heart
+          / .col-md-8.col-md-offset-2
+          /   .title-desc
+          /     %p Welcome to
+          /     %h2 Elskamor
+      / .overlay
 / begin:content
 %section#content
-= yield
+  .container
+    = yield
 
 %section#footer
   .container
     .row
-      .col-md-3.col-sm-3
+      .col-md-4
         .widget
-          %h3 Recent Posts
-          %ul.list-unstyled
-            %li
-              %a{href: "#"} Lorem ipsum
-            %li
-              %a{href: "#"} Lorem
-            %li
-              %a{href: "#"} Lorem ipsum dolor
-            %li
-              %a{href: "#"} Lorem sit
-            %li
-              %a{href: "#"} Lorem dolor sit
-      .col-md-3.col-sm-3
+          %h3 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+          .btn.btn-default= link_to 'Read the Blog', posts_path
+      .col-md-4
         .widget
-          %h3 Top destinations
-          %ul.list-unstyled
-            %li
-              %a{href: "#"} Lorem sit
-            %li
-              %a{href: "#"} Lorem dolor sit
-            %li
-              %a{href: "#"} Home
-            %li
-              %a{href: "#"} About
-            %li
-              %a{href: "#"} Contact
-      .col-md-6.col-sm-5
+          %h3 It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution
+          .btn.btn-default= link_to 'Look for Offers', offers_path
+      .col-md-4
         .footer-logo
           %h2
-            %i.fa.fa-recycle
             Elskamor
-          %p
-            1024 Main Street, Jejeran Plrt Btl
-            %br>/
-            +62 (123) 456-7890
+            %i.fa.fa-heart
           %br/
-          %p.muted © 2014 Brand Inc.
+          %p.muted © 2014 Berlin
           %a{href: "#"} Terms of Service
+          %br
           %a{href: "#"} Privacy
 / end:footer
 / begin:copyright
@@ -142,21 +122,24 @@
         %p
           Copyright © 2014
           = succeed "." do
-            %strong letsleaveitmepty
+            %strong Elskamor
       .col-md-6.col-sm-6.copy-right
         %ul.list-inline.social-icon
           %li
-            %a.icon-twitter{"data-original-title" => "Twitter", "data-placement" => "top", href: "#", rel: "tooltip", title: ""}
+            %a.icon-twitter{"data-original-title" => "Twitter", "data-placement" => "top", href: "https://twitter.com/Elskamor", rel: "tooltip", title: "", target: "_blank"}
               %i.fa.fa-twitter
           %li
-            %a.icon-facebook{"data-original-title" => "Facebook", "data-placement" => "top", href: "#", rel: "tooltip", title: ""}
+            %a.icon-facebook{"data-original-title" => "Facebook", "data-placement" => "top", href: "https://www.facebook.com/elskamor", rel: "tooltip", title: "", target: "_blank"}
               %i.fa.fa-facebook-square
           %li
-            %a.icon-youtube{"data-original-title" => "Youtube", "data-placement" => "top", href: "#", rel: "tooltip", title: ""}
+            %a.icon-youtube{"data-original-title" => "Youtube", "data-placement" => "top", href: "https://www.youtube.com/user/Elskamor", rel: "tooltip", title: "", target: "_blank"}
               %i.fa.fa-youtube
+          / %li
+          /   %a.icon-instagram{"data-original-title" => "Instagram", "data-placement" => "top", href: "#", rel: "tooltip", title: "", target: "_blank"}
+          /     %i.fa.fa-instagram
           %li
-            %a.icon-instagram{"data-original-title" => "Instagram", "data-placement" => "top", href: "#", rel: "tooltip", title: ""}
-              %i.fa.fa-instagram
+            %a.icon-pinterest{"data-original-title" => "Pinterest", "data-placement" => "top", href: "http://www.pinterest.com/Elskamor/", rel: "tooltip", title: "", target: "_blank"}
+              %i.fa.fa-pinterest
 
 
 %script{src: "js/jquery.js"}

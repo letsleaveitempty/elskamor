@@ -160,7 +160,7 @@
 
 	/* header */
 	#header{
-		min-height: 450px;
+		min-height: 750px;
 		height: auto;
 		padding-top: 140px;
 	}
@@ -177,6 +177,7 @@
 
 	#header h1{
 		font-size: 32px;
+		color: #fffff;
 	}
 
 	#header .header-content,
@@ -185,6 +186,7 @@
 		padding-left: 0;
 		padding-right: 0;
 		padding-top: 100px;
+		color: #fffff;
 	}
 
 	/* featured */
