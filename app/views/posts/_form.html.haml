@@ -7,11 +7,12 @@
       %ul
         - @post.errors.full_messages.each do |message|
           %li= message
+  = f.file_field(:main_image)
   .field
     = f.label :title
     %br/
     = f.text_field :title, {style: "width: 800px; height: 50px;"}
-  = cl_image_upload_tag(:main_image)
+  / = cl_image_upload_tag(:main_image)
   .field
     = f.label :body
     %br/

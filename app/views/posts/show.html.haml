@@ -14,7 +14,7 @@
                   %a Maria
               %span
                 %em On May 04, 2014
-            = cl_image_tag(@post.main_image, :crop => :fill, :width => 120, :height => 80)
+            / = image_tag(@post.post_image_url)
             %p= raw(@post.body)
         %hr/
 

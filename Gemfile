@@ -22,6 +22,7 @@ gem 'haml'
 gem "font-awesome-rails"
 gem 'bootsy'
 gem 'devise'
+gem 'carrierwave'
 gem 'cloudinary'
 
 # gem 'bootstrap-sass'
