@@ -6,7 +6,9 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
 
-  resources :offers
+  resources :offers do
+    resources :offer_inquiries, only: ['new', 'create', 'show', 'index']
+  end
 
   resources :posts
 

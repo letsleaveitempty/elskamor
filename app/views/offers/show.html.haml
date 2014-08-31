@@ -5,9 +5,23 @@
         .row
           .col-md-12.post-single
             = image_tag("img05.jpg")
+            %h3.text-center= raw(@offer.short_teaser)
+        %hr
+        .row
+          .col-md-12.post-single
             %p= raw(@offer.description)
-        %hr/
 
       .col-md-4.col-sm-4.sidebar
-        .widget-sidebar
+        .widget-sidebar.text-center
+          %h3= @offer.name
+          .well
+            = @offer.address
+            %br
+            = @offer.zip_code
+            = @offer.city
+            %br
+            = @offer.country
+        .widget-sidebar.text-center
           %h3 Contact us about this offer:
+          .well
+            / = render partial: 'offer_inquiries/form', object: @inquiry

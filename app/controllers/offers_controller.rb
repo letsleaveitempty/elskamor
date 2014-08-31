@@ -11,6 +11,7 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
+    @inquiry = OfferInquiry.new
   end
 
   # GET /offers/new
@@ -70,6 +71,6 @@ class OffersController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def offer_params
-      params.require(:offer).permit(:name, :description)
+      params.require(:offer).permit!
     end
 end
