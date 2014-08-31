@@ -12,7 +12,7 @@
       - @posts.each do |post|
         .col-md-6
           .post-content
-            = image_tag("img05.jpg")
+            = image_tag(post.main_image)
             .heading-title.heading-small
               %h2
                 = link_to post.title, post_path(post)

@@ -14,7 +14,7 @@
                   %a Maria
               %span
                 %em On May 04, 2014
-            / = image_tag(@post.post_image_url)
+            = image_tag(@post.main_image)
             %p= raw(@post.body)
         %hr/
 
@@ -26,7 +26,7 @@
               %li
                 .post-wrapper
                   .post-img
-                    = image_tag("img05.jpg")
+                    = image_tag(latest.main_image)
                   .post-text
                     .post-meta
                       %span
