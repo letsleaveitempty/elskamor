@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   # GET /posts
   # GET /posts.json
   def index
-    @posts = Post.all
+    @posts = Post.order(created_at: :desc)
   end
 
   # GET /posts/1
@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post.author = current_user
 
     if params[:main_image].present?
-      preloaded = Cloudinary::PreloadedFile.new(params[:main_image])         
+      preloaded = Cloudinary::PreloadedFile.new(params[:main_image])
       raise "Invalid upload signature" if !preloaded.valid?
       @post.main_image = preloaded.identifier
     end

@@ -9,11 +9,7 @@
                 %a= @post.title
             .post-meta
               %span
-                %em
-                  By
-                  %a Maria
-              %span
-                %em On May 04, 2014
+                = @post.created_at.strftime("on %A, %B %e, %Y")
             = image_tag(@post.main_image)
             %p= raw(@post.body)
         %hr/
@@ -36,4 +32,3 @@
                         %a{href: post_path(latest)}= latest.title
                   .body
                     %p= strip_tags(latest.body[0..150])
-

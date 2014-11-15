@@ -18,9 +18,6 @@
                 = link_to post.title, post_path(post)
             .post-meta
               %span
-                By Maria
-                / %a{:href => "#", :rel => "author", :title => "Posts by admin"} 
-              %span
                 = post.created_at.strftime("on %A, %B %e, %Y")
             %p
               = strip_tags(post.body[0..250])
