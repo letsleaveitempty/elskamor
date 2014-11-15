@@ -31,15 +31,15 @@ development:
   database: elskamor_development
   pool: 5
   username: postgres
-  password: 
+  password:
 
 test:
   adapter: postgresql
   encoding: unicode
   database: elskamor_test
   pool: 5
-  username: posthres
-  password: 
+  username: postgres
+  password:
 
 production:
   adapter: postgresql
@@ -47,5 +47,5 @@ production:
   database: elskamor_production
   pool: 5
   username: postgres
-  password: 
+  password:
   template: template0
