@@ -6,6 +6,8 @@ Rails.application.routes.draw do
 
   root to: 'posts#index'
 
+  get '/imprint' => 'home#imprint', as: :imprint
+
   resources :offers do
     resources :offer_inquiries, only: ['new', 'create', 'show', 'index']
   end
