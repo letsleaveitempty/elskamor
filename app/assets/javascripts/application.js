@@ -14,5 +14,5 @@
 //= require jquery_ujs
 //= require bootsy
 //= require turbolinks
-//= require_tree .
 //= require cloudinary
+//= require_tree .
