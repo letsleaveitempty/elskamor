@@ -11,7 +11,8 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
-    @inquiry = OfferInquiry.new
+    @offer = Offer.find(params[:id])
+    @inquiry = OfferInquiry.new(offer: @offer)
   end
 
   # GET /offers/new

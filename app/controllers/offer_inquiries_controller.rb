@@ -1,5 +1,4 @@
 class OfferInquiriesController < ApplicationController
-  before_action :set_inquiry, only: [:show]
   before_action :authenticate_user!, except: [:new, :create]
 
   def index
@@ -7,6 +6,7 @@ class OfferInquiriesController < ApplicationController
   end
 
   def show
+    @inquiry = OfferInquiry.find(params[:id])
   end
 
   def new
@@ -18,23 +18,29 @@ class OfferInquiriesController < ApplicationController
     @inquiry = OfferInquiry.new(inquiry_params)
     @inquiry.offer_id = params[:id]
 
-    respond_to do |format|
-      if @inquiry.save
-        format.html { redirect_to :back, notice: 'Your message was sent' }
-        format.json { render :show, status: :created, location: @offer }
-      else
-        format.html { render :new }
-        format.json { render json: @offer.errors, status: :unprocessable_entity }
-      end
+    if @inquiry.save
+      flash[:notice] = "Your message has been sent! We will contact you shortly"
+      redirect_to offer_path(params[:id])
+    else
+      redirect_to :back
     end
+
+    # respond_to do |format|
+    #   if @inquiry.save
+    #     # redirect_to offer_path(params[:id])
+    #     # flash[:notice] = "Your message has been sent! We will contact you shortly"
+    #     format.html { redirect_to :offer_path,
+    #       flash[:notice] = "Your message has been sent! We will contact you shortly" }
+    #     # format.json { render :show, status: :created, location: @offer }
+    #   else
+    #     format.html { render :new }
+    #     format.json { render json: @offer.errors, status: :unprocessable_entity }
+    #   end
+    # end
   end
 
   private
-    def set_inquiry
-      @inquiry = OfferInquiry.find(params[:id])
-    end
-
     def inquiry_params
-      params.require(:offer_inquiry).permit!
+      params.require(:inquiry).permit!
     end
 end
