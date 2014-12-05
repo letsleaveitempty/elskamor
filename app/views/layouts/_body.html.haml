@@ -39,3 +39,10 @@
       .row
         %h1.text-center ELSKAMOR
         -# = image_tag("Elskamor_Logo_Transparent_White.tif")
+
+  -# .flash-messages
+  -#   - flash.each do |name, msg|
+  -#     - if msg.is_a?(String)
+  -#       .alert.alert-default.alert-dismissable
+  -#         %a.close{"data-dismiss" => "alert"} &times;
+  -#         = content_tag :span, msg, :id => "flash_#{name}"
