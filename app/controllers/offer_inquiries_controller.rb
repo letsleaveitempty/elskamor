@@ -10,13 +10,14 @@ class OfferInquiriesController < ApplicationController
   end
 
   def new
-    @offer = Offer.find(params[:id])
+    @offer = Offer.friendly.find(params[:id])
     @inquiry = OfferInquiry.new
   end
 
   def create
+    @offer = Offer.friendly.find(params[:id])
     @inquiry = OfferInquiry.new(inquiry_params)
-    @inquiry.offer_id = params[:id]
+    @inquiry.offer_id = @offer.id
 
     if @inquiry.save
       flash[:notice] = "Your message has been sent! We will contact you shortly"
