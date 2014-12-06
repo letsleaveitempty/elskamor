@@ -21,7 +21,12 @@
             = @offer.city
             %br
             = @offer.country
+        -# .widget-sidebar.text-center
+        -#   %h3 Do you have questions about this offer?
+        -#   .well
+        -#     = render partial: 'offer_inquiries/form', locals: { inquiry: @inquiry }
         .widget-sidebar.text-center
           %h3 Do you have questions about this offer?
           .well
-            = render partial: 'offer_inquiries/form', locals: { inquiry: @inquiry }
+            Simply write an email to:
+            %a{:href => "mailto:maria@elskamor.com"} maria@elskamor.com
