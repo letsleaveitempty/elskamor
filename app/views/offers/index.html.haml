@@ -23,7 +23,7 @@
                 %small= "#{offer.address}, #{offer.zip_code} #{offer.city}, #{offer.country}"
             %p= offer.short_teaser
             .post-link
-              %a{:href => offer_path(offer)}
+              %a{:href => offer_path(offer.id)}
                 %span See More Details
                 - if user_signed_in?
                   %br
@@ -31,6 +31,5 @@
                   %hr
                   %br
                   .well.well-small.text-center
-                    = link_to 'Inquiries', offer_offer_inquiries_path(offer)
                     = link_to 'Edit', edit_offer_path(offer)
                     = link_to 'Delete', offer, method: :delete, data: { confirm: 'Are you sure you want to delete this offer?' }

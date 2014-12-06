@@ -14,7 +14,7 @@
           %a.dropdown-toggle{"data-toggle" => "dropdown"}
             About
             %b.caret
-          %ul.dropdown-menu.disabled
+          %ul.dropdown-menu
             %li.disabled
               %a= link_to 'Team', team_path
             %li.disabled
@@ -24,6 +24,8 @@
             %li.disabled
               %a= link_to 'Imprint', imprint_path
         - if user_signed_in?
+          %li
+            %a= link_to 'Inquiries', offer_offer_inquiries_path(1)
           %li
             = link_to 'Sign out', destroy_user_session_path
         -else
