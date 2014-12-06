@@ -13,7 +13,8 @@
 //= require jquery
 //= require jquery_ujs
 //= require twitter/bootstrap
-//= require bootsy
 //= require turbolinks
 //= require cloudinary
+//= require bootsy
 //= require_tree .
+//= require danish_theme/script.js

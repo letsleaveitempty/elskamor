@@ -14,4 +14,5 @@
  *= require bootsy
  *= require font-awesome
  *= require_tree .
+ *= require danish_theme/style.css
  */
