@@ -22,6 +22,7 @@ class OfferInquiriesController < ApplicationController
       flash[:notice] = "Your message has been sent! We will contact you shortly"
       redirect_to offer_path(params[:id])
     else
+      flash[:notice] = "Following fields are required: #{@inquiry.errors.messages.values.join(', ')}. Please fill it in."
       redirect_to :back
     end
 

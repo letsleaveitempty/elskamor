@@ -11,7 +11,7 @@ class OffersController < ApplicationController
   # GET /offers/1
   # GET /offers/1.json
   def show
-    @offer = Offer.find(params[:id])
+    @offer = Offer.friendly.find(params[:id])
     @inquiry = OfferInquiry.new(offer: @offer)
   end
 
@@ -67,7 +67,7 @@ class OffersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_offer
-      @offer = Offer.find(params[:id])
+      @offer = Offer.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

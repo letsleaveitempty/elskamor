@@ -32,5 +32,6 @@ gem 'carrierwave'
 gem 'cloudinary'
 gem 'rollbar', '~> 1.2.7'
 gem 'friendly_id', '~> 5.0.0'
+gem 'simple_form'
 
 ruby '2.1.2'

@@ -10,23 +10,19 @@
           %a{href: posts_path} Blog
         %li
           %a{href: offers_path} Offers
-        -# %li.dropdown
-        -#   %a.dropdown-toggle{"data-toggle" => "dropdown"}
-        -#     Pages
-        -#     %b.caret
-        -#   %ul.dropdown-menu
-        -#     %li
-        -#       %a{:href => "blog.html"} Blog
-        -#     %li
-        -#       %a{:href => "single.html"} Single
-        -#     %li
-        -#       %a{:href => "archive.html"} Archives
-        -#     %li
-        -#       %a{:href => "category.html"} Category
-        -#     %li
-        -#       %a{:href => "portfolio.html"} Portfolio
-        -#     %li
-        -#       %a{:href => "portfolio-single.html"} Portfolio Single
+        %li.dropdown
+          %a.dropdown-toggle{"data-toggle" => "dropdown"}
+            About
+            %b.caret
+          %ul.dropdown-menu.disabled
+            %li.disabled
+              %a= link_to 'Team', team_path
+            %li.disabled
+              %a= link_to 'About us', about_us_path
+            %li.disabled
+              %a= link_to 'How does it work?', faq_path
+            %li.disabled
+              %a= link_to 'Imprint', imprint_path
         - if user_signed_in?
           %li
             = link_to 'Sign out', destroy_user_session_path
@@ -35,14 +31,13 @@
             %a{href: new_user_session_path} Sign in
 
   %section#header{style: "background-image: url('http://33.media.tumblr.com/ba7758a52675589e05dc931572be9688/tumblr_n7ygur3NV91st5lhmo1_1280.jpg');"}
-    .container
-      .row
-        %h1.text-center ELSKAMOR
-        -# = image_tag("Elskamor_Logo_Transparent_White.tif")
+    .container.text-center
+      .landing-logo
+        = image_tag("elskamor_transparent_white.png")
 
-  -# .flash-messages
-  -#   - flash.each do |name, msg|
-  -#     - if msg.is_a?(String)
-  -#       .alert.alert-default.alert-dismissable
-  -#         %a.close{"data-dismiss" => "alert"} &times;
-  -#         = content_tag :span, msg, :id => "flash_#{name}"
+  .flash-messages
+    - flash.each do |name, msg|
+      - if msg.is_a?(String)
+        .alert.alert-info.alert-dismissable
+          %a.close{"data-dismiss" => "alert"} &times;
+          %p.text-center= content_tag :span, msg, :id => "flash_#{name}"

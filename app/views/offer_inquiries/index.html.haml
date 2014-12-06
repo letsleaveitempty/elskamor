@@ -1,1 +1,16 @@
-= @inquiries.each { |i| i.to_s}
+%table.table.table-striped
+  %tr
+    %th id
+    %th offer
+    %th name
+    %th phone
+    %th email
+    %th message
+  - @inquiries.each do |inquiry|
+    %tr
+      %td= inquiry.id
+      %td= inquiry.offer.name
+      %td= inquiry.name
+      %td= inquiry.phone
+      %td= inquiry.email
+      %td= inquiry.message
