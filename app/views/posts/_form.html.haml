@@ -18,6 +18,7 @@
   .field
     = f.label :body
     %br/
-    = f.bootsy_area :body, {style: "width: 800px; height: 550px;"}
+    = f.text_area :body, class: 'tinymce'
+    = tinymce
   .actions
     = f.submit

@@ -42,7 +42,8 @@
   .field
     = f.label :description
     %br/
-    = f.bootsy_area :description, {style: "width: 800px; height: 550px;"}
-  
+    = f.text_area :description, class: 'tinymce'
+    = tinymce
+
   .actions
     = f.submit

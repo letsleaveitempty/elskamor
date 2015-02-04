@@ -15,6 +15,6 @@
 //= require twitter/bootstrap
 //= require turbolinks
 //= require cloudinary
-//= require bootsy
+//= require tinymce-jquery
 //= require_tree .
 //= require danish_theme/script.js
