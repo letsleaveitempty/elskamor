@@ -45,7 +45,11 @@
   %section#header{style: "background-image: url('http://33.media.tumblr.com/ba7758a52675589e05dc931572be9688/tumblr_n7ygur3NV91st5lhmo1_1280.jpg');"}
     .container.text-center
       .landing-logo
-        = image_tag("elskamor_transparent_white.png")
+        = image_tag("elskamor_transparent_white.png", height:'100px')
+        %h2{style: "color: white; font-family: 'Raleway', sans-serif;"}
+          Travel inspiration and adventures
+          %br
+          for the caring voyager
 
   .flash-messages
     - flash.each do |name, msg|
