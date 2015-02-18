@@ -19,7 +19,7 @@
             .post-meta
               %span
                 = post.created_at.strftime("on %A, %B %e, %Y")
-            %p
+            %p{style: "height: 170px"}
               = strip_tags(strip_tags(post.body[0..250]).html_safe)
               = "..."
             .post-link

@@ -21,7 +21,7 @@
                 %small= offer.name
                 %br
                 %small= "#{offer.address}, #{offer.zip_code} #{offer.city}, #{offer.country}"
-            %p= offer.short_teaser
+            %p{style: "height: 200px"}= offer.short_teaser
             .post-link
               %a{:href => offer_path(offer.id)}
                 %span See More Details
