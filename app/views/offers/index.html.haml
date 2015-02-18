@@ -12,7 +12,7 @@
       - @offers.each do |offer|
         .post-container.col-md-6.col-xs-12
           .post-content.no-padding
-            = image_tag(offer.main_image)
+            = image_tag(offer.main_image, style: "height: 350px")
           .post-content
             .heading-title.heading-small
               %h2
