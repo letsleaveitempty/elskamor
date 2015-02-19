@@ -10,8 +10,9 @@
             .post-meta
               %span
                 = @post.created_at.strftime("on %A, %B %e, %Y")
-            = image_tag(@post.main_image)
-            %p= raw(@post.body)
+                = image_tag(@post.main_image)
+          .col-md-12
+            = markdown(@post.body)
         %hr/
 
       .col-md-4.col-sm-4.sidebar
@@ -31,4 +32,4 @@
                       %h2
                         %a{href: post_path(latest)}= latest.title
                   .body
-                    %p= strip_tags(latest.body[0..150])
+                    %p= truncate(strip_tags(latest.body), length: 170)

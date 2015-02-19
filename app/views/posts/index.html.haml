@@ -20,8 +20,7 @@
               %span
                 = post.created_at.strftime("on %A, %B %e, %Y")
             %p{style: "height: 170px"}
-              = strip_tags(strip_tags(post.body[0..250]).html_safe)
-              = "..."
+              = truncate(strip_tags(post.body), length: 250)
             .post-link
               %a{:href => post_path(post)}
                 %span Read More

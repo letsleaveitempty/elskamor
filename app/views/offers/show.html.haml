@@ -8,8 +8,8 @@
             %h3.text-center= raw(@offer.short_teaser)
         %hr
         .row
-          .col-md-12.post-single
-            %p= raw(@offer.description)
+          .col-md-12
+            = markdown(@offer.description)
 
       .col-md-4.col-sm-4.sidebar
         .widget-sidebar.text-center
