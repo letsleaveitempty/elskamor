@@ -15,21 +15,25 @@
             = markdown(@post.body)
         %hr/
 
-      .col-md-4.col-sm-4.sidebar
-        .widget-sidebar.widget_top-posts
-          %h3 Latest Posts
-          %ul
-            - Post.last(3).each do |latest|
-              %li
-                .post-wrapper
-                  .post-img
-                    = image_tag(latest.main_image)
-                  .post-text
-                    .post-meta
-                      %span
-                        %em= latest.created_at.strftime("on %A, %B %e, %Y")
-                    .heading-title
-                      %h2
-                        %a{href: post_path(latest)}= latest.title
-                  .body
-                    %p= truncate(strip_tags(latest.body), length: 170)
+      .col-md-4.col-sm-4
+        .fb-like-box{"data-colorscheme" => "light", "data-header" => "false", "data-href" => "https://www.facebook.com/elskamor", "data-show-border" => "true", "data-show-faces" => "true", "data-stream" => "false"}
+        %br
+        %br
+        .sidebar
+          .widget-sidebar.widget_top-posts
+            %h4 Latest Posts
+            %ul
+              - Post.last(3).each do |latest|
+                %li
+                  .post-wrapper
+                    .post-img
+                      = image_tag(latest.main_image)
+                    .post-text
+                      .post-meta
+                        %span
+                          %em= latest.created_at.strftime("on %A, %B %e, %Y")
+                      .heading-title
+                        %h2
+                          %a{href: post_path(latest)}= latest.title
+                    .body
+                      %p= truncate(strip_tags(latest.body), length: 170)
