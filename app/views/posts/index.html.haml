@@ -10,25 +10,26 @@
 
     .row
       - @posts.each do |post|
-        .col-md-6
-          .post-content
-            = image_tag(post.main_image, style: "height: 300px")
-            .heading-title.heading-small
-              %h2
-                = link_to post.title, post_path(post)
-            .post-meta
-              %span
-                = post.created_at.strftime("on %A, %B %e, %Y")
-            %p{style: "height: 170px"}
-              = truncate(strip_tags(post.body), length: 250)
-            .post-link
-              %a{:href => post_path(post)}
-                %span Read More
-                - if user_signed_in?
-                  %br
-                  %br
-                  %hr
-                  %br
-                  .well.well-small
-                    = link_to 'Edit', edit_post_path(post)
-                    = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }
+        - if post.published || user_signed_in?
+          .col-md-6
+            .post-content
+              = image_tag(post.main_image, style: "height: 300px")
+              .heading-title.heading-small
+                %h2
+                  = link_to post.title, post_path(post)
+              .post-meta
+                %span
+                  = post.created_at.strftime("on %A, %B %e, %Y")
+              %p{style: "height: 170px"}
+                = truncate(strip_tags(post.body), length: 250)
+              .post-link
+                %a{:href => post_path(post)}
+                  %span Read More
+                  - if user_signed_in?
+                    %br
+                    %br
+                    %hr
+                    %br
+                    .well.well-small
+                      = link_to 'Edit', edit_post_path(post)
+                      = link_to 'Delete', post, method: :delete, data: { confirm: 'Are you sure you want to delete this post?' }
