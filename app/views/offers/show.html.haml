@@ -12,25 +12,18 @@
             = markdown(@offer.description)
 
       .col-md-4.col-sm-4
+        %br
         .fb-like-box.text-center{"data-colorscheme" => "light", "data-header" => "false", "data-href" => "https://www.facebook.com/elskamor", "data-show-border" => "true", "data-show-faces" => "true", "data-stream" => "false"}
         %br
         %br
         .sidebar
           .widget-sidebar.text-center
-            %h3= @offer.name
             .well
-              = @offer.address
-              %br
-              = @offer.zip_code
-              = @offer.city
-              %br
-              = @offer.country
+              %h2= @offer.title
+              %hr
+              %h4= ["#{@offer.city}", "#{@offer.country}"].join(', ')
+              %h4= @offer.dates
           .widget-sidebar.text-center
             %h3 Do you have questions about this offer?
             .well
               = render partial: 'offer_inquiries/form', locals: { inquiry: @inquiry }
-          -# .widget-sidebar.text-center
-          -#   %h3 Do you have questions about this offer?
-          -#   .well
-          -#     Simply write an email to:
-          -#     %a{:href => "mailto:maria@elskamor.com"} maria@elskamor.com

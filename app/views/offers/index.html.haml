@@ -18,9 +18,7 @@
               %h2
                 = link_to offer.title, offer_path(offer)
                 %br
-                %small= offer.name
-                %br
-                %small= "#{offer.address}, #{offer.zip_code} #{offer.city}, #{offer.country}"
+                %small= ["#{offer.city}", "#{offer.country}"].join(', ')
             %p{style: "height: 200px"}
               = strip_tags(offer.short_teaser)
             .post-link
